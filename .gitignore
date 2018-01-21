@@ -20,6 +20,9 @@ dist/
 nbdist/
 .nb-gradle/
 
+hm-server/target/*
+
+**.db
 
 
 
