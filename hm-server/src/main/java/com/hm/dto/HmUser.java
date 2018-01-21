@@ -5,7 +5,7 @@ import javax.persistence.*;
 
 @Entity
 @Table(name = "user")
-public class User {
+public class HmUser {
 
     @Id
     @Column(name = "user_id")
@@ -55,7 +55,7 @@ public class User {
 
     @Override
     public String toString() {
-        return "User{" +
+        return "HmUser{" +
                 "userId=" + userId +
                 ", username='" + username + '\'' +
                 ", password='" + password + '\'' +

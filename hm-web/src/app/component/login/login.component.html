@@ -1,5 +1,9 @@
-<p>
-  login works!
+<form (ngSubmit)="login()">
 
-  get data: {{user ? user : "error"}}
-</p>
+  <input name="username" [(ngModel)]="user.username">
+
+  <input type="password" name="password" [(ngModel)]="user.password">
+
+  <button>登录</button>
+
+</form>

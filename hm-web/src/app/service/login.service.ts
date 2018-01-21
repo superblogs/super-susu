@@ -11,4 +11,9 @@ export class LoginService {
   getUser(): Observable<any> {
     return this.httpClient.get(`/api/user`);
   }
+
+  login(user): Observable<any> {
+    return this.httpClient.post(`/api/login?username=${user.username}&password=${user.password}`, null)
+      ;
+  }
 }

@@ -7,14 +7,18 @@ import {RouterModule} from '@angular/router';
 import {LoginComponent} from './component/login/login.component';
 import {LoginService} from './service/login.service';
 import {HttpClientModule} from '@angular/common/http';
+import { HomeComponent } from './component/home/home.component';
+import {FormsModule} from '@angular/forms';
 
 @NgModule({
   declarations: [
     AppComponent,
-    LoginComponent
+    LoginComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule,
+    FormsModule,
     HttpClientModule,
     RouterModule.forRoot(ROUTES),
   ],
