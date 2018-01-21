@@ -9,6 +9,7 @@ import {LoginService} from './service/login.service';
 import {HttpClientModule} from '@angular/common/http';
 import { HomeComponent } from './component/home/home.component';
 import {FormsModule} from '@angular/forms';
+import {AuthGuard} from './service/AuthGuard';
 
 @NgModule({
   declarations: [
@@ -23,7 +24,8 @@ import {FormsModule} from '@angular/forms';
     RouterModule.forRoot(ROUTES),
   ],
   providers: [
-    LoginService
+    LoginService,
+    AuthGuard
   ],
   bootstrap: [AppComponent]
 })

@@ -24,8 +24,10 @@ export class LoginComponent implements OnInit {
     this.loginService.login(this.user).subscribe(response => {
       console.log(response);
       if (response.authenticated) {
+        sessionStorage.setItem('loginStatus', 'true');
         this.router.navigateByUrl('/home');
-
+      } else {
+        alert('账号或密码不正确');
       }
     });
   }
