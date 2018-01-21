@@ -1,2 +1,2 @@
 # super-susu
-fakename
+pritln hello world
