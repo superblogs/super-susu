@@ -29,6 +29,6 @@ export class LoginComponent implements OnInit {
       } else {
         alert('账号或密码不正确');
       }
-    });
+    },error => alert("网路连接失败！"));
   }
 }
