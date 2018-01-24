@@ -10,12 +10,14 @@ import {HttpClientModule} from '@angular/common/http';
 import { HomeComponent } from './component/home/home.component';
 import {FormsModule} from '@angular/forms';
 import {AuthGuard} from './service/AuthGuard';
+import { HeaderComponent } from './page/header/header.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
-    HomeComponent
+    HomeComponent,
+    HeaderComponent
   ],
   imports: [
     BrowserModule,
