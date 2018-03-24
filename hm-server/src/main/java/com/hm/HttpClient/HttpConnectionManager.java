@@ -1,4 +1,4 @@
-package com.hm.util.HttpClient;
+package com.hm.HttpClient;
 
 import org.apache.http.client.config.RequestConfig;
 import org.apache.http.config.Registry;
@@ -10,11 +10,12 @@ import org.apache.http.conn.ssl.SSLConnectionSocketFactory;
 import org.apache.http.impl.client.CloseableHttpClient;
 import org.apache.http.impl.client.HttpClients;
 import org.apache.http.impl.conn.PoolingHttpClientConnectionManager;
+import org.springframework.stereotype.Component;
 
 import javax.net.ssl.SSLContext;
 import java.security.NoSuchAlgorithmException;
 
-//@Component
+@Component
 public class HttpConnectionManager {
 
     private PoolingHttpClientConnectionManager connectionManager = null;
@@ -23,8 +24,8 @@ public class HttpConnectionManager {
         this.init();
     }
 
-//    @PostConstruct
-    public void init() {
+    //    @PostConstruct
+    private void init() {
         LayeredConnectionSocketFactory socketFactory = null;
 
         try {
@@ -44,7 +45,7 @@ public class HttpConnectionManager {
         connectionManager.setDefaultMaxPerRoute(connectionManager.getMaxTotal());
     }
 
-    public CloseableHttpClient getHttpClient() {
+    CloseableHttpClient getHttpClient() {
 
         RequestConfig requestConfig = RequestConfig.custom()
                 .setConnectTimeout(3 * 1000)
@@ -52,10 +53,6 @@ public class HttpConnectionManager {
                 .setConnectionRequestTimeout(500)
                 .build();
 
-        CloseableHttpClient httpClient = HttpClients.custom()
-                .setConnectionManager(connectionManager)
-                .setDefaultRequestConfig(requestConfig)
-                .build();
-        return httpClient;
+        return HttpClients.custom().setConnectionManager(connectionManager).setDefaultRequestConfig(requestConfig).build();
     }
 }

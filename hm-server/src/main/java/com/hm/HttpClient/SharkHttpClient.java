@@ -1,4 +1,4 @@
-package com.hm.util.HttpClient;
+package com.hm.HttpClient;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.apache.commons.io.IOUtils;
@@ -14,6 +14,7 @@ import org.apache.http.util.EntityUtils;
 import java.io.IOException;
 import java.io.InputStream;
 
+//没有连接池
 //@Component
 public class SharkHttpClient {
 
