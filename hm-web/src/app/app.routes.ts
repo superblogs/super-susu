@@ -7,7 +7,7 @@ export const ROUTES: Routes = [
   {
     path: '',
     pathMatch: 'full',
-    redirectTo: '/login'
+    redirectTo: '/home'
   },
   {
     path: 'login',
@@ -15,7 +15,7 @@ export const ROUTES: Routes = [
   },
   {
     path: 'home',
-    component: HomeComponent,
-    canActivate: [AuthGuard]
+    component: HomeComponent
+    //canActivate: [AuthGuard]
   },
 ];
