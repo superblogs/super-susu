@@ -10,12 +10,19 @@ import {HttpClientModule} from '@angular/common/http';
 import {HomeComponent} from './component/home/home.component';
 import {FormsModule} from '@angular/forms';
 import {AuthGuard} from './service/AuthGuard';
+import {HeaderComponent} from './component/header/header.component';
+import {QueryListComponent} from './component/query-list/query-list.component';
+import {FooterComponent} from './component/footer/footer.component';
+import {BasedSearchService} from "./service/based-search.service";
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
-    HomeComponent
+    HomeComponent,
+    HeaderComponent,
+    QueryListComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,
@@ -25,7 +32,8 @@ import {AuthGuard} from './service/AuthGuard';
   ],
   providers: [
     LoginService,
-    AuthGuard
+    AuthGuard,
+    BasedSearchService
   ],
   bootstrap: [AppComponent]
 })
