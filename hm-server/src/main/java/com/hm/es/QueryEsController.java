@@ -1,6 +1,6 @@
 package com.hm.es;
 
-import com.hm.HttpClient.HttpConnectionManager;
+
 import com.hm.util.UtilHello;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -16,7 +16,7 @@ public class QueryEsController {
     //@todo when query, new HttpConnectionManager
 
     @Autowired
-    private HttpConnectionManager httpConnectionManager;
+    private com.hm.HttpClient.HttpConnectionManager httpConnectionManager;
 
 
     @GetMapping(value = "getEsData")
