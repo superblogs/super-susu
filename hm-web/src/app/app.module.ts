@@ -1,6 +1,5 @@
 import {BrowserModule} from '@angular/platform-browser';
 import {NgModule} from '@angular/core';
-
 import {AppComponent} from './app.component';
 import {ROUTES} from './app.routes';
 import {RouterModule} from '@angular/router';
@@ -11,9 +10,9 @@ import {HomeComponent} from './component/home/home.component';
 import {FormsModule} from '@angular/forms';
 import {AuthGuard} from './service/AuthGuard';
 import {HeaderComponent} from './component/header/header.component';
-import {QueryListComponent} from './component/query-list/query-list.component';
 import {FooterComponent} from './component/footer/footer.component';
 import {BasedSearchService} from "./service/based-search.service";
+import {SearchResultsComponent} from './component/search-results/search-results.component';
 
 @NgModule({
   declarations: [
@@ -21,8 +20,8 @@ import {BasedSearchService} from "./service/based-search.service";
     LoginComponent,
     HomeComponent,
     HeaderComponent,
-    QueryListComponent,
-    FooterComponent
+    FooterComponent,
+    SearchResultsComponent
   ],
   imports: [
     BrowserModule,
