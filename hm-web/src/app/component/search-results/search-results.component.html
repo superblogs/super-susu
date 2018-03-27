@@ -1,6 +1,6 @@
 <main class="packages-list-container" id="all-packages">
   <div class="container">
-    <div class="list-group packages" id="common-packages">
+    <div *ngFor="let user of users" class="list-group packages" id="common-packages">
       <div>
         <a href="/bootstrap/" class="package list-group-item" target="_blank"
            onclick="_hmt.push(['_trackEvent', 'packages', 'click', 'bootstrap'])">
@@ -9,7 +9,7 @@
             <div class="col-md-9 hidden-xs"><p class="package-description">Bootstrap 是全球最受欢迎的前端组件库，用于开发响应式布局、移动设备优先的 WEB
               项目。</p></div>
             <div class="package-extra-info col-md-9 col-md-offset-3 col-xs-12"><span><i
-              class="fa fa-star"></i> 122947</span></div>
+              class="fa fa-star"></i> {{user}}</span></div>
           </div>
         </a>
       </div>
