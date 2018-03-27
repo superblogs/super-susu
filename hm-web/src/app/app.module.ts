@@ -11,7 +11,7 @@ import {FormsModule} from '@angular/forms';
 import {AuthGuard} from './service/AuthGuard';
 import {HeaderComponent} from './component/header/header.component';
 import {FooterComponent} from './component/footer/footer.component';
-import {BasedSearchService} from "./service/based-search.service";
+import {SearchService} from "./service/search.service";
 import {SearchResultsComponent} from './component/search-results/search-results.component';
 
 @NgModule({
@@ -32,7 +32,7 @@ import {SearchResultsComponent} from './component/search-results/search-results.
   providers: [
     LoginService,
     AuthGuard,
-    BasedSearchService
+    SearchService
   ],
   bootstrap: [AppComponent]
 })

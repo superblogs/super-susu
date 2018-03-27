@@ -1,6 +1,12 @@
 export class searchDto {
   q: string;
-  opreName: string;
-  companyName : string;
-  index: string;
+  from: number;
+  size: number;
+  sort: string;
+  model: companyModel;
+
+}
+export class companyModel{
+  name:string;
+  city:string;
 }
