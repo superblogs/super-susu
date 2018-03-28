@@ -45,7 +45,7 @@ public class HttpConnectionManager {
         connectionManager.setDefaultMaxPerRoute(connectionManager.getMaxTotal());
     }
 
-    CloseableHttpClient getHttpClient() {
+    public CloseableHttpClient getHttpClient() {
 
         RequestConfig requestConfig = RequestConfig.custom()
                 .setConnectTimeout(3 * 1000)
