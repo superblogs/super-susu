@@ -17,19 +17,16 @@ public class UtilHello {
         if (termList.size() == 1) {
             String partOfSpeech = termList.get(0).toString().split("/" )[1];
             if (Objects.equals(partOfSpeech, "nr" )) {
+                System.out.println(queryName+"是名字");
                 return true;
             }
         }
+        System.out.println(queryName+"不是名字");
         return false;
     }
 
     public static void main(String[] args) {
-        if(!isNameBoolean("11111" )){
-            System.out.println("不是"+"1111");
-        }
-        if(isNameBoolean("胡文俭" )){
-            System.out.println("是名字");
-        }
+        isNameBoolean("雷军");
 
 
     }
