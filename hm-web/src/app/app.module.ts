@@ -13,6 +13,7 @@ import {HeaderComponent} from './component/header/header.component';
 import {FooterComponent} from './component/footer/footer.component';
 import {SearchService} from "./service/search.service";
 import {SearchResultsComponent} from './component/search-results/search-results.component';
+import { AngularFontAwesomeModule } from 'angular-font-awesome';
 
 @NgModule({
   declarations: [
@@ -27,6 +28,7 @@ import {SearchResultsComponent} from './component/search-results/search-results.
     BrowserModule,
     FormsModule,
     HttpClientModule,
+    AngularFontAwesomeModule,
     RouterModule.forRoot(ROUTES),
   ],
   providers: [
