@@ -1,3 +1,5 @@
-<div class="hello container">
-<iframe class="iframe" scrolling="no" [src]="hello" ></iframe>
+<div class="container">
+  <!--<iframe class="iframe" scrolling="no" [src]="hello"></iframe>-->
+  <!--<iframe class="iframe" scrolling="no" [innerHtml]="helloPipi"></iframe>-->
+  <iframe class="iframe" scrolling="no"   [src]="helloPipi | safeHtml"></iframe>
 </div>

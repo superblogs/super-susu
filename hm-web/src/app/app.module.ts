@@ -14,6 +14,8 @@ import {FooterComponent} from './component/footer/footer.component';
 import {SearchService} from "./service/search.service";
 import {SearchResultsComponent} from './component/search-results/search-results.component';
 import { AngularFontAwesomeModule } from 'angular-font-awesome';
+import { SafeHtmlPipe } from './pipe/safe-html.pipe';
+import { ZhongshiRoutingModule } from './app-routing/zhongshi-routing.module';
 
 @NgModule({
   declarations: [
@@ -22,7 +24,8 @@ import { AngularFontAwesomeModule } from 'angular-font-awesome';
     HomeComponent,
     HeaderComponent,
     FooterComponent,
-    SearchResultsComponent
+    SearchResultsComponent,
+    SafeHtmlPipe
   ],
   imports: [
     BrowserModule,
@@ -30,6 +33,7 @@ import { AngularFontAwesomeModule } from 'angular-font-awesome';
     HttpClientModule,
     AngularFontAwesomeModule,
     RouterModule.forRoot(ROUTES),
+    ZhongshiRoutingModule,
   ],
   providers: [
     LoginService,
