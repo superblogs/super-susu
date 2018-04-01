@@ -112,6 +112,22 @@
       <artifactId>fastjson</artifactId>
       <version>1.2.38</version>
     </dependency>
+
+    <dependency>
+      <groupId>me.yingrui.mahjong</groupId>
+      <artifactId>lib-segment</artifactId>
+      <version>1.2</version>
+    </dependency>
+    <dependency>
+      <groupId>org.scala-lang</groupId>
+      <artifactId>scala-library</artifactId>
+      <version>2.11.8</version>
+    </dependency>
+    <dependency>
+      <groupId>org.scala-lang.modules</groupId>
+      <artifactId>scala-parser-combinators_2.11</artifactId>
+      <version>1.0.5</version>
+    </dependency>
   </dependencies>
 
 </project>
