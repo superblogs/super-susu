@@ -13,9 +13,10 @@ import {HeaderComponent} from './component/header/header.component';
 import {FooterComponent} from './component/footer/footer.component';
 import {SearchService} from "./service/search.service";
 import {SearchResultsComponent} from './component/search-results/search-results.component';
-import { AngularFontAwesomeModule } from 'angular-font-awesome';
-import { SafeHtmlPipe } from './pipe/safe-html.pipe';
-import { ZhongshiRoutingModule } from './app-routing/zhongshi-routing.module';
+import {AngularFontAwesomeModule} from 'angular-font-awesome';
+import {SafeHtmlPipe} from './pipe/safe-html.pipe';
+import {ZhongshiRoutingModule} from './app-routing/zhongshi-routing.module';
+import {HttpModule} from "@angular/http";
 
 @NgModule({
   declarations: [
@@ -31,6 +32,7 @@ import { ZhongshiRoutingModule } from './app-routing/zhongshi-routing.module';
     BrowserModule,
     FormsModule,
     HttpClientModule,
+    HttpModule,
     AngularFontAwesomeModule,
     RouterModule.forRoot(ROUTES),
     ZhongshiRoutingModule,

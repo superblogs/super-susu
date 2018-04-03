@@ -6,7 +6,13 @@ export class searchDto {
   model: companyModel;
 
 }
-export class companyModel{
-  name:string;
-  city:string;
+
+export class companyModel {
+  name: string;
+  city: string;
+}
+
+export class configDto {
+  heroesUrl: string;
+  textfile: string;
 }
