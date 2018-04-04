@@ -16,6 +16,7 @@ import {SearchResultsComponent} from './component/search-results/search-results.
 import { AngularFontAwesomeModule } from 'angular-font-awesome';
 import { SafeHtmlPipe } from './pipe/safe-html.pipe';
 import { ZhongshiRoutingModule } from './app-routing/zhongshi-routing.module';
+import { SearchBarComponent } from './component/search-bar/search-bar.component';
 
 @NgModule({
   declarations: [
@@ -25,7 +26,8 @@ import { ZhongshiRoutingModule } from './app-routing/zhongshi-routing.module';
     HeaderComponent,
     FooterComponent,
     SearchResultsComponent,
-    SafeHtmlPipe
+    SafeHtmlPipe,
+    SearchBarComponent
   ],
   imports: [
     BrowserModule,
