@@ -17,8 +17,10 @@ import {SearchResultsComponent} from './component/search-results/search-results.
 import { AngularFontAwesomeModule } from 'angular-font-awesome';
 import { SafeHtmlPipe } from './pipe/safe-html.pipe';
 import { ZhongshiRoutingModule } from './app-routing/zhongshi-routing.module';
-import { SearchBarComponent } from './component/search-bar/search-bar.component';
 import {HttpModule} from "@angular/http";
+import {NgZorroAntdModule} from "ng-zorro-antd";
+import {SearchBarComponent} from "./component/search-bar/search-bar.component";
+
 
 @NgModule({
   declarations: [
@@ -38,6 +40,7 @@ import {HttpModule} from "@angular/http";
     HttpModule,
     AngularFontAwesomeModule,
     RouterModule.forRoot(ROUTES),
+    NgZorroAntdModule.forRoot(),
     ZhongshiRoutingModule,
   ],
   providers: [
