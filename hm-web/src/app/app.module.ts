@@ -24,7 +24,6 @@ import {SearchBarComponent} from "./component/search-bar/search-bar.component";
 
 
 
-
 @NgModule({
   declarations: [
     AppComponent,
