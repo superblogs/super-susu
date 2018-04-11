@@ -12,7 +12,7 @@ import {AuthGuard} from './service/AuthGuard';
 import {HeaderComponent} from './component/header/header.component';
 import {FooterComponent} from './component/footer/footer.component';
 import {SearchService} from "./service/search.service";
-import {SearchResultsComponent} from './component/search-results/search-results.component';
+import {SearchResultsComponent} from './component/search/search-results/search-results.component';
 
 import { AngularFontAwesomeModule } from 'angular-font-awesome';
 import { SafeHtmlPipe } from './pipe/safe-html.pipe';
@@ -20,7 +20,8 @@ import { ZhongshiRoutingModule } from './app-routing/zhongshi-routing.module';
 
 import {HttpModule} from "@angular/http";
 import {NgZorroAntdModule} from "ng-zorro-antd";
-import {SearchBarComponent} from "./component/search-bar/search-bar.component";
+import {SearchBarComponent} from "./component/search/search-bar/search-bar.component";
+import { SearchNewComponent } from './component/search/search-new/search-new.component';
 
 
 
@@ -33,7 +34,8 @@ import {SearchBarComponent} from "./component/search-bar/search-bar.component";
     FooterComponent,
     SearchResultsComponent,
     SafeHtmlPipe,
-    SearchBarComponent
+    SearchBarComponent,
+    SearchNewComponent
   ],
   imports: [
     BrowserModule,
