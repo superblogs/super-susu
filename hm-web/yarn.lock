@@ -4532,7 +4532,7 @@ ng2-material-dropdown@0.9.5:
   version "0.9.5"
   resolved "http://registry.npm.taobao.org/ng2-material-dropdown/download/ng2-material-dropdown-0.9.5.tgz#ddb4da1fce6704de04198b16d1c1ea3e0809f7d3"
 
-ngx-bootstrap@^2.0.0-beta.9:
+ngx-bootstrap@^2.0.3:
   version "2.0.3"
   resolved "http://registry.npm.taobao.org/ngx-bootstrap/download/ngx-bootstrap-2.0.3.tgz#b8ca4be305be4e2e99f60d941cc8a3e906f198d7"
 
