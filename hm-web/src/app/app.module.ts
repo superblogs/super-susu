@@ -23,6 +23,7 @@ import {NgZorroAntdModule} from "ng-zorro-antd";
 import {SearchBarComponent} from "./component/search/search-bar/search-bar.component";
 import {SearchNewComponent} from './component/search/search-new/search-new.component';
 import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
+import {PopoverModule} from "ngx-bootstrap";
 
 
 @NgModule({
@@ -43,8 +44,9 @@ import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
     HttpClientModule,
     HttpModule,
     AngularFontAwesomeModule,
-    RouterModule.forRoot(ROUTES),
     BrowserAnimationsModule,
+    RouterModule.forRoot(ROUTES),
+    PopoverModule.forRoot(),
     NgZorroAntdModule.forRoot(),
 
     ZhongshiRoutingModule,

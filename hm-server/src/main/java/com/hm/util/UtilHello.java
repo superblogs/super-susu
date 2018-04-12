@@ -36,7 +36,6 @@ public class UtilHello {
     public static void main(String[] args) {
         isNameBoolean("雷军");
         indexSegment();
-
     }
 
 
