@@ -1,5 +1,5 @@
 
-package com.hm.es;
+package com.hm.common.es;
 
 import com.alibaba.fastjson.JSON;
 import com.hm.util.UtilHello;

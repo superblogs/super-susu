@@ -1,6 +1,6 @@
-package com.hm.es;
+package com.hm.common.es;
 
-import com.hm.HttpClient.HttpConnectionManager;
+import com.hm.common.HttpClient.HttpConnectionManager;
 import org.apache.commons.io.IOUtils;
 import org.apache.http.HttpEntity;
 import org.apache.http.NameValuePair;

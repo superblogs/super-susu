@@ -1,4 +1,4 @@
-package com.hm.HttpClient;
+package com.hm.common.HttpClient;
 
 import org.apache.http.client.config.RequestConfig;
 import org.apache.http.config.Registry;

@@ -1,4 +1,4 @@
-package com.hm.es;
+package com.hm.common.es;
 
 import com.alibaba.fastjson.JSON;
 import org.springframework.http.*;

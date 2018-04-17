@@ -1,4 +1,4 @@
-package com.hm.HttpClient;
+package com.hm.common.HttpClient;
 
 
 import java.io.File;

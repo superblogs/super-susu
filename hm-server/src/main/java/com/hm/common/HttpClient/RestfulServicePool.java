@@ -1,4 +1,4 @@
-package com.hm.HttpClient;
+package com.hm.common.HttpClient;
 
 import org.apache.commons.io.IOUtils;
 import org.apache.http.HttpEntity;

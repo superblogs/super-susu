@@ -1,4 +1,4 @@
-package com.hm.es;
+package com.hm.common.es;
 
 
 import java.util.ArrayList;

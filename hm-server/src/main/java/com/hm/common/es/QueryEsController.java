@@ -1,4 +1,4 @@
-package com.hm.es;
+package com.hm.common.es;
 
 
 import com.hm.util.UtilHello;
@@ -16,7 +16,7 @@ public class QueryEsController {
     //@todo when query, new HttpConnectionManager
 
     @Autowired
-    private com.hm.HttpClient.HttpConnectionManager httpConnectionManager;
+    private com.hm.common.HttpClient.HttpConnectionManager httpConnectionManager;
 
 
     @GetMapping(value = "getEsData")
