@@ -5,6 +5,11 @@
   <artifactId>hm-server</artifactId>
   <packaging>war</packaging>
   <version>1.0-SNAPSHOT</version>
+  <parent>
+    <groupId>org.springframework.boot</groupId>
+    <artifactId>spring-boot-starter-parent</artifactId>
+    <version>1.5.7.RELEASE</version>
+  </parent>
 
   <dependencyManagement>
     <dependencies>
@@ -25,20 +30,7 @@
     </dependencies>
   </dependencyManagement>
 
-  <build>
-    <plugins>
-      <plugin>
-        <groupId>org.apache.maven.plugins</groupId>
-        <artifactId>maven-compiler-plugin</artifactId>
-        <version>2.3.2</version>
-        <configuration>
-          <source>1.8</source>
-          <target>1.8</target>
-          <encoding>UTF-8</encoding>
-        </configuration>
-      </plugin>
-    </plugins>
-  </build>
+
 
   <dependencies>
     <!-- 引入spring的测试框架-->
@@ -96,6 +88,12 @@
       <artifactId>hanlp</artifactId>
       <version>portable-1.5.2</version>
     </dependency>
+    <!-- https://mvnrepository.com/artifact/com.janeluo/ikanalyzer -->
+    <dependency>
+      <groupId>com.janeluo</groupId>
+      <artifactId>ikanalyzer</artifactId>
+      <version>2012_u6</version>
+    </dependency>
 
     <dependency>
       <groupId>org.apache.httpcomponents</groupId>
@@ -113,21 +111,22 @@
       <version>1.2.38</version>
     </dependency>
 
-    <dependency>
-      <groupId>me.yingrui.mahjong</groupId>
-      <artifactId>lib-segment</artifactId>
-      <version>1.2</version>
-    </dependency>
-    <dependency>
-      <groupId>org.scala-lang</groupId>
-      <artifactId>scala-library</artifactId>
-      <version>2.11.8</version>
-    </dependency>
-    <dependency>
-      <groupId>org.scala-lang.modules</groupId>
-      <artifactId>scala-parser-combinators_2.11</artifactId>
-      <version>1.0.5</version>
-    </dependency>
+
   </dependencies>
+
+  <build>
+    <plugins>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-compiler-plugin</artifactId>
+        <version>2.3.2</version>
+        <configuration>
+          <source>1.8</source>
+          <target>1.8</target>
+          <encoding>UTF-8</encoding>
+        </configuration>
+      </plugin>
+    </plugins>
+  </build>
 
 </project>
