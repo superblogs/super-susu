@@ -1,7 +1,11 @@
 package com.hm.suanfa;
 
 
+import com.sun.org.apache.bcel.internal.generic.SWAP;
+
+import java.util.Arrays;
 import java.util.Date;
+import java.util.HashMap;
 import java.util.stream.IntStream;
 
 /**
@@ -29,13 +33,15 @@ public class Fuzadu extends StartTime {
             res += i;
         }
         System.out.println(res);
+        HashMap oo = new HashMap();
     }
 
     /**
-     * 复杂度为O(n)
+     * 复杂度为O(n) 1/2*n
      */
     private static void reverse(int[] array) {
         int size = array.length;
+        Arrays.sort(array);
         System.out.println("执行后的数组为：");
 
         IntStream.range(0, size / 2).forEach(i -> {
@@ -47,6 +53,20 @@ public class Fuzadu extends StartTime {
         IntStream.range(0, size).forEach(i -> {
             System.out.print(array[i]);
         });
+
+    }
+
+    /**
+     * 选择排序 O(n^2)
+     */
+    private static void selectionSort(){
+
+    }
+    /**
+     * 二分查找法 顺序存储结构
+     * O(logN)
+     */
+    private static void binarySearch(){
 
     }
 }
