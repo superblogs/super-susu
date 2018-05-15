@@ -5,7 +5,7 @@ import org.junit.Test;
 import java.util.Arrays;
 import java.util.Date;
 
-public class FuzaduTest{
+public class FuZaduTest {
 
     @Test
     public  void reverseTest(){
@@ -20,5 +20,7 @@ public class FuzaduTest{
         else
             System.out.println("reverse filed");
 
+        System.out.println(Arrays.toString(array));
+        System.out.println(Arrays.binarySearch(array,1));
     }
 }
