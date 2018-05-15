@@ -23,20 +23,14 @@ public class Fuzadu {
     /**
      * 复杂度为O(n) 1/2*n
      */
-    public static void reverse(int[] array) {
+    public static int[] reverse(int[] array) {
         int size = array.length;
-        Arrays.sort(array);
-        System.out.println("执行后的数组为：");
-
         IntStream.range(0, size / 2).forEach(i -> {
             int temp = array[i];
             array[i] = array[size - 1 - i];
             array[size - 1 - i] = temp;
         });
-
-        IntStream.range(0, size).forEach(i -> {
-            System.out.print(array[i]);
-        });
+        return array;
     }
 
     /**
