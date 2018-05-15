@@ -1,8 +1,6 @@
 package com.hm.suanfa;
 
 
-import com.sun.org.apache.bcel.internal.generic.SWAP;
-
 import java.util.Arrays;
 import java.util.Date;
 import java.util.HashMap;
@@ -11,13 +9,14 @@ import java.util.stream.IntStream;
 /**
  * 常见算法复杂度分析
  */
-public class Fuzadu extends StartTime {
+public class Fuzadu  {
 
     public static void main(String[] args) {
         run();
     }
 
     private static void run() {
+        Date startTime = new Date();
         reverse(new int[]{1, 2, 3, 4, 5, 6, 7, 8, 9});
         Date endTime = new Date();
         System.out.print("执行程序所需的毫秒数: ");
@@ -33,13 +32,12 @@ public class Fuzadu extends StartTime {
             res += i;
         }
         System.out.println(res);
-        HashMap oo = new HashMap();
     }
 
     /**
      * 复杂度为O(n) 1/2*n
      */
-    private static void reverse(int[] array) {
+    public static void reverse(int[] array) {
         int size = array.length;
         Arrays.sort(array);
         System.out.println("执行后的数组为：");
@@ -69,4 +67,10 @@ public class Fuzadu extends StartTime {
     private static void binarySearch(){
 
     }
+
+    /**
+     * 主定理
+     */
+
+
 }
