@@ -9,19 +9,7 @@ import java.util.stream.IntStream;
 /**
  * 常见算法复杂度分析
  */
-public class Fuzadu  {
-
-    public static void main(String[] args) {
-        run();
-    }
-
-    private static void run() {
-        Date startTime = new Date();
-        reverse(new int[]{1, 2, 3, 4, 5, 6, 7, 8, 9});
-        Date endTime = new Date();
-        System.out.print("执行程序所需的毫秒数: ");
-        System.out.println(endTime.getTime() - startTime.getTime());
-    }
+public class Fuzadu {
 
     /**
      * 复杂度为 O(n)
@@ -51,20 +39,20 @@ public class Fuzadu  {
         IntStream.range(0, size).forEach(i -> {
             System.out.print(array[i]);
         });
-
     }
 
     /**
      * 选择排序 O(n^2)
      */
-    private static void selectionSort(){
+    private static void selectionSort() {
 
     }
+
     /**
      * 二分查找法 顺序存储结构
      * O(logN)
      */
-    private static void binarySearch(){
+    private static void binarySearch() {
 
     }
 
