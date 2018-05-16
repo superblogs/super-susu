@@ -2,8 +2,7 @@ package com.hm.suanfa;
 
 import org.junit.Test;
 
-import java.util.Arrays;
-import java.util.Date;
+import java.util.*;
 
 public class FuZaduTest {
 
@@ -22,5 +21,7 @@ public class FuZaduTest {
 
         System.out.println(Arrays.toString(array));
         System.out.println(Arrays.binarySearch(array,1));
+        List list = new ArrayList();
+        LinkedList linkedList = new LinkedList();
     }
 }
