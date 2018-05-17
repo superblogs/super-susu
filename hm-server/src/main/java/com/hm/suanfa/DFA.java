@@ -2,7 +2,7 @@ package com.hm.suanfa;
 
 /**
  * 正则
- * DFA 算法屏蔽敏感词
+ * DFA 算法屏蔽敏感词 敏感词.csv
  * NFA 算法
  */
 public class DFA {
