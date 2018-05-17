@@ -11,17 +11,21 @@ import java.util.Set;
 public class ListTest {
 
     public List courseToSelect;
-    public ListTest(){
+
+    public ListTest() {
         System.out.println("构造函数执行");
-        this.courseToSelect=new ArrayList();
+        this.courseToSelect = new ArrayList();
     }
 
-    public void testAdd(){
+    public void testAdd() {
         //创建一个课程对象 调用array的add方法 添加到备选课程的list中
-        Course course = new Course("1","数据结构");
+        Course course = new Course("1", "数据结构");
         courseToSelect.add(course);
+        //把新课程添加到0位置 把course 挤走,
+        courseToSelect.add(0, new Course("2", "java开发课程"));
+
         Course course1 = (Course) courseToSelect.get(0);
-        System.out.println("添加了课程: "+course1.id+":"+course1.name);
+        System.out.println("添加了课程: " + course1.id + ":" + course1.name);
     }
 }
 
@@ -32,7 +36,7 @@ class Course {
     public String id;
     public String name;
 
-    public  Course(String id, String name) {
+    public Course(String id, String name) {
         this.id = id;
         this.name = name;
     }
@@ -41,13 +45,14 @@ class Course {
 /**
  * 学生类
  */
-class Student{
+class Student {
     public String id;
     public String name;
     public Set courses;
-    public Student(String id,String name){
-        this.id=id;
-        this.name=name;
-        this.courses=new HashSet();
+
+    public Student(String id, String name) {
+        this.id = id;
+        this.name = name;
+        this.courses = new HashSet();
     }
 }
