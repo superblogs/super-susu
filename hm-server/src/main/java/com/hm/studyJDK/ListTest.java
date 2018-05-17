@@ -1,9 +1,6 @@
 package com.hm.studyJDK;
 
-import java.util.ArrayList;
-import java.util.HashSet;
-import java.util.List;
-import java.util.Set;
+import java.util.*;
 
 /**
  * 用于存放备选课程的list
@@ -24,8 +21,16 @@ public class ListTest {
         //把新课程添加到0位置 把course 挤走,
         courseToSelect.add(0, new Course("2", "java开发课程"));
 
-        Course course1 = (Course) courseToSelect.get(0);
-        System.out.println("添加了课程: " + course1.id + ":" + course1.name);
+        Course[] courses = {new Course("3", "数学3"), new Course("4", "语文4")};
+        //list的AddAll
+        courseToSelect.addAll(Arrays.asList(courses));
+
+        courseToSelect.forEach(i -> {
+            Course eachCourse = (Course) i;
+            System.out.println(eachCourse.id + ":" + eachCourse.name);
+        });
+
+
     }
 }
 
