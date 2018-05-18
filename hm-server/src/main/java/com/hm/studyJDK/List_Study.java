@@ -8,11 +8,12 @@ import java.util.*;
  */
 public class List_Study {
 
-    public List courseToSelect;
+    //带有泛型的List
+    public ArrayList<Course> courseToSelect;
 
     public List_Study() {
         System.out.println("构造函数执行");
-        this.courseToSelect = new ArrayList();
+        this.courseToSelect = new ArrayList<>();
     }
 
     public void testAdd() {
