@@ -15,5 +15,6 @@ public class ListTestTest {
     @Test
     public void iterator(){
         Iterator iterator = new ArrayList().iterator();
+        System.out.println(iterator.next());
     }
 }
