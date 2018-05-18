@@ -4,12 +4,13 @@ import java.util.*;
 
 /**
  * 用于存放备选课程的list
+ * ArrayList 元素可以重复
  */
-public class ListTest {
+public class List_Study {
 
     public List courseToSelect;
 
-    public ListTest() {
+    public List_Study() {
         System.out.println("构造函数执行");
         this.courseToSelect = new ArrayList();
     }
@@ -21,17 +22,26 @@ public class ListTest {
         //把新课程添加到0位置 把course 挤走,
         courseToSelect.add(0, new Course("2", "java开发课程"));
 
-        Course[] courses = {new Course("3", "数学3"), new Course("4", "语文4")};
+        Course[] courses = {new Course("3", "数学3"), new Course("3", "数学3"), new Course("4", "语文4")};
         //list的AddAll
         courseToSelect.addAll(Arrays.asList(courses));
 
+        courseToSelect.set(0,new Course("0", "修改List0的位置的课程"));
+        courseToSelect.remove(0);
+        courseToSelect.remove(new Course("3", "数学3"));
+        getList(courseToSelect);
+    }
+
+    /**
+     * 从List取出元素 并打印
+     */
+    private void getList(List courseToSelect) {
         courseToSelect.forEach(i -> {
             Course eachCourse = (Course) i;
             System.out.println(eachCourse.id + ":" + eachCourse.name);
         });
-
-
     }
+
 }
 
 /**

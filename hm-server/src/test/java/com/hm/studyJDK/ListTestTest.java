@@ -12,8 +12,9 @@ public class ListTestTest {
         List_Study list_study = new List_Study();
         list_study.testAdd();
     }
+
     @Test
-    public void iterator(){
+    public void iterator() {
         Iterator iterator = new ArrayList().iterator();
         System.out.println(iterator.next());
     }
