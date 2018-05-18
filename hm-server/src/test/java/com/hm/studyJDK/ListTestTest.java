@@ -2,16 +2,18 @@ package com.hm.studyJDK;
 
 import org.junit.Test;
 
+import java.util.ArrayList;
+import java.util.Iterator;
+
 public class ListTestTest {
 
     @Test
     public void listTest1() {
-        ListTest listTest = new ListTest();
-        listTest.testAdd();
-
-
-        StringBuffer stringBuffer = new StringBuffer();
-        String htllo = "";
-        StringBuilder builder = new StringBuilder();
+        List_Study list_study = new List_Study();
+        list_study.testAdd();
+    }
+    @Test
+    public void iterator(){
+        Iterator iterator = new ArrayList().iterator();
     }
 }
