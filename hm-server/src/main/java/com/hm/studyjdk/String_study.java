@@ -1,4 +1,4 @@
-package com.hm.studyJDK;
+package com.hm.studyjdk;
 
 /**
  * 学习String String buffer String Builder

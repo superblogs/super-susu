@@ -1,9 +1,6 @@
-package com.hm.studyJDK;
+package com.hm.studyjdk;
 
 import org.junit.Test;
-
-import java.util.LinkedList;
-import java.util.Vector;
 
 public class Set_Test {
     @Test
