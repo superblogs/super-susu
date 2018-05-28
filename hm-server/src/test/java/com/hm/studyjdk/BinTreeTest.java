@@ -5,7 +5,7 @@ import org.junit.Test;
 public class BinTreeTest {
     @Test
     public void binTree() {
-        BinTree binTree = new BinTree();
+        com.hm.studyjdk.BinTree binTree = new com.hm.studyjdk.BinTree();
         Object[] obj = {0, 1, 2, 3, 4, 5, 6, 7};
         binTree.createTree(obj);
         // 先序遍历
