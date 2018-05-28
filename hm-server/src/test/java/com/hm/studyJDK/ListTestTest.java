@@ -10,8 +10,19 @@ public class ListTestTest {
         listTest.testAdd();
 
 
-        StringBuffer stringBuffer = new StringBuffer();
         String htllo = "";
+        StringBuffer stringBuffer = new StringBuffer();
         StringBuilder builder = new StringBuilder();
+
+        /**
+         * 测试reverse方法
+         */
+        stringBuffer.append("中国我爱你");
+        stringBuffer.reverse();
+        System.out.println(stringBuffer);
+
+        builder.append("中国我爱你");
+        builder.reverse();
+        System.out.println(builder);
     }
 }
