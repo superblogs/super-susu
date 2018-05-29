@@ -23,7 +23,6 @@ nbdist/
 hm-server/target/*
 
 **.db
-/data/*
 
 
 
@@ -90,3 +89,7 @@ typings/
 
 
 
+/data/model/segment/
+/data/model/crf/
+/data/model/dependency/
+/data/model/perceptron/
