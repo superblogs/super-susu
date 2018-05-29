@@ -1,0 +1,2 @@
+美尼尔综合症 n-disease 10000
+巴拉巴拉症 n-disease 1024
