@@ -47,10 +47,8 @@ public class Test {
     // NLP分词
     @org.junit.Test
     public void demo04() {
-        List<Term> termList = NLPTokenizer.segment("中国科学院计算技术研究所的宗成庆教授正在教授自然语言处理课程");
-        for (Term term : termList) {
-            System.out.println(term.word);
-        }
+        List<Term> termList = NLPTokenizer.segment("中国科学院计算技术研究所的宗成庆教授正在教授自然语言处理课程 罗永浩完蛋了 你们知道吗");
+        termList.forEach(i -> System.out.print(i.word+" "));
     }
 
     // 索引分词
@@ -81,7 +79,7 @@ public class Test {
     public void demo07() {
         CRFSegment crfSegment = new CRFSegment();
         crfSegment.enablePartOfSpeechTagging(true);
-        List<Term> termList = crfSegment.seg("你看过穆赫兰天吗");
+        List<Term> termList = crfSegment.seg("你看过穆赫兰天吗 你看过江小白吗");
         System.out.println(termList);
         for (Term term : termList) {
             if (term.nature == null) {
@@ -115,7 +113,6 @@ public class Test {
 
         System.out.println(CustomDictionary.add("单身狗", "nz 1024 n 1"));
         System.out.println(CustomDictionary.get("单身狗"));
-
 
         final char[] charArray = text.toCharArray();
         CustomDictionary.parseText(charArray, (begin, end, value) -> System.out.printf("[%d:%d]=%s %s\n", begin, end, new String(charArray, begin, end - begin), value));
