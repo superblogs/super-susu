@@ -1,0 +1,8 @@
+// elasticSearch.properties
+httpHost:
+   host: loclhost
+   port: 9200
+   schema: http
+esclient:
+  connectNum: 50
+  connectPerRoute: 10

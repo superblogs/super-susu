@@ -66,8 +66,8 @@ public class Test {
         Segment nShortSegment = new NShortSegment().enableCustomDictionary(false).enablePlaceRecognize(true).enableOrganizationRecognize(true);
         Segment shortestSegment = new DijkstraSegment().enableCustomDictionary(true).enableOrganizationRecognize(true);
         String[] testCase = {
-                "今天，刘志军案的关键人物，山西女商人丁书苗在市二中院出庭受审。",
-                "刘喜杰石国祥会见吴亚琴先进事迹报告团成员",
+                "今天，刘志军案的关键人物，山西女商人丁书苗和胡文件在市二中院出庭受审。",
+                "刘喜杰石国祥会见吴亚琴先进事迹报告团成员 惠安三中",
         };
         for (String sentence : testCase) {
             System.out.println("N-最短分词：" + nShortSegment.seg(sentence) + "\n最短路分词：" + shortestSegment.seg(sentence));
@@ -79,7 +79,7 @@ public class Test {
     public void demo07() {
         CRFSegment crfSegment = new CRFSegment();
         crfSegment.enablePartOfSpeechTagging(true);
-        List<Term> termList = crfSegment.seg("你看过穆赫兰天吗 你看过江小白吗");
+        List<Term> termList = crfSegment.seg("你看过穆赫兰天吗 你看过江小白吗 成都市第四人民医院");
         System.out.println(termList);
         for (Term term : termList) {
             if (term.nature == null) {
@@ -123,5 +123,9 @@ public class Test {
             System.out.println(entry);
         }
         System.out.println(HanLP.segment(text));
+    }
+    @org.junit.Test
+    public void demoTestPersonDic(){
+        Demo.segment("攻城狮逆袭单身狗，迎娶白富美，走上人生巅峰 胡文件 惠安三中 惠安三中学");
     }
 }

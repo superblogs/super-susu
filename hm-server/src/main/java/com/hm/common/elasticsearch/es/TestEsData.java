@@ -1,4 +1,4 @@
-package com.hm.common.es;
+package com.hm.common.elasticsearch.es;
 
 import com.hm.common.HttpClient.HttpConnectionManager;
 import org.apache.commons.io.IOUtils;

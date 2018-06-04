@@ -1,4 +1,4 @@
-package com.hm.common.es;
+package com.hm.common.elasticsearch.es;
 
 public class CompanyInfo {
     String Name;
