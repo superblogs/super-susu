@@ -15,10 +15,7 @@ public class BTreeImpl implements BTree {
         BTree bTree = new BTreeImpl();
         int[] ints = new int[]{1, 5, 7, 8, 4, 3, 30, 56, 7, 4};
 
-//        IntStream intStream111 = IntStream.range(0, ints.length).map(i -> {
-//            System.out.println(i);
-//        });
-
+        IntStream.range(0,100).mapToObj(i->i+100000).forEach(o-> System.out.println(o));
 
         IntStream.range(0, 100).filter(i -> i > 88).forEach(i -> {
             System.out.println(i);
@@ -68,7 +65,17 @@ public class BTreeImpl implements BTree {
 
     }
 
+class mapTestDto{
+        String name;
 
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+}
     @Override
     public Boolean remove(int i) {
         return null;
