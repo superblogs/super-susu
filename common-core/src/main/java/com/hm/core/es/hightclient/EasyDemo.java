@@ -2,6 +2,7 @@ package com.hm.core.es.hightclient;
 
 import org.apache.http.HttpHost;
 import org.elasticsearch.action.search.SearchRequest;
+import org.elasticsearch.action.search.SearchRequestBuilder;
 import org.elasticsearch.action.search.SearchResponse;
 import org.elasticsearch.client.RestClient;
 import org.elasticsearch.client.RestHighLevelClient;
@@ -22,11 +23,8 @@ public class EasyDemo {
 
     private static void getEsReturnData() throws IOException {
 
-        RestClient restClient = RestClient.builder(
-                new HttpHost("localhost", 9200, "http"))
-                .build();
-
-        RestHighLevelClient client = new RestHighLevelClient(restClient);
+        RestHighLevelClient client = new RestHighLevelClient(
+                RestClient.builder(new HttpHost("localhost", 9200, "http")).build());
 
         SearchSourceBuilder searchSourceBuilder = new SearchSourceBuilder();
         searchSourceBuilder.query(QueryBuilders.matchAllQuery());
@@ -34,7 +32,8 @@ public class EasyDemo {
         SearchRequest searchRequest = new SearchRequest();
         searchRequest.indices("social-*");
         searchRequest.source(searchSourceBuilder);
-
+        //@Todo 查询SearchRequestBuilder && SearchSourceBuilder 的关系
+        //SearchRequestBuilder
 
         SearchResponse searchResponse = client.search(searchRequest);
 
