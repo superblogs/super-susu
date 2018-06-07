@@ -38,9 +38,9 @@ public class Test {
     // 标准分词
     @org.junit.Test
     public void demo03() {
-        List<Term> termList = StandardTokenizer.segment("商品和服务");
+        List<Term> termList = StandardTokenizer.segment("商品和服务 揭阳 盐城");
         for (Term term : termList) {
-            System.out.println(term.word);
+            System.out.println(term.word+term.nature);
         }
     }
 

@@ -320,9 +320,9 @@ align-text@^0.1.1, align-text@^0.1.3:
     longest "^1.0.1"
     repeat-string "^1.5.2"
 
-alphanum-sort@^1.0.1, alphanum-sort@^1.0.2:
+alphanum-sortBy@^1.0.1, alphanum-sortBy@^1.0.2:
   version "1.0.2"
-  resolved "http://registry.npm.taobao.org/alphanum-sort/download/alphanum-sort-1.0.2.tgz#97a1119649b211ad33691d9f9f486a8ec9fbe0a3"
+  resolved "http://registry.npm.taobao.org/alphanum-sortBy/download/alphanum-sortBy-1.0.2.tgz#97a1119649b211ad33691d9f9f486a8ec9fbe0a3"
 
 amdefine@>=0.0.4:
   version "1.0.1"
@@ -950,7 +950,7 @@ browserify@^14.5.0:
     constants-browserify "~1.0.0"
     crypto-browserify "^3.0.0"
     defined "^1.0.0"
-    deps-sort "^2.0.0"
+    deps-sortBy "^2.0.0"
     domain-browser "~1.1.0"
     duplexer2 "~0.1.2"
     events "~1.1.0"
@@ -1903,9 +1903,9 @@ depd@~1.1.1, depd@~1.1.2:
   version "1.1.2"
   resolved "http://registry.npm.taobao.org/depd/download/depd-1.1.2.tgz#9bcd52e14c097763e749b274c4346ed2e560b5a9"
 
-deps-sort@^2.0.0:
+deps-sortBy@^2.0.0:
   version "2.0.0"
-  resolved "http://registry.npm.taobao.org/deps-sort/download/deps-sort-2.0.0.tgz#091724902e84658260eb910748cccd1af6e21fb5"
+  resolved "http://registry.npm.taobao.org/deps-sortBy/download/deps-sortBy-2.0.0.tgz#091724902e84658260eb910748cccd1af6e21fb5"
   dependencies:
     JSONStream "^1.0.3"
     shasum "^1.0.0"
@@ -4738,7 +4738,7 @@ normalize-url@^1.4.0:
     object-assign "^4.0.1"
     prepend-http "^1.0.0"
     query-string "^4.1.0"
-    sort-keys "^1.0.0"
+    sortBy-keys "^1.0.0"
 
 npm-run-path@^2.0.0:
   version "2.0.2"
@@ -5301,7 +5301,7 @@ postcss-minify-params@^1.0.4:
   version "1.2.2"
   resolved "http://registry.npm.taobao.org/postcss-minify-params/download/postcss-minify-params-1.2.2.tgz#ad2ce071373b943b3d930a3fa59a358c28d6f1f3"
   dependencies:
-    alphanum-sort "^1.0.1"
+    alphanum-sortBy "^1.0.1"
     postcss "^5.0.2"
     postcss-value-parser "^3.0.2"
     uniqs "^2.0.0"
@@ -5310,7 +5310,7 @@ postcss-minify-selectors@^2.0.4:
   version "2.1.1"
   resolved "http://registry.npm.taobao.org/postcss-minify-selectors/download/postcss-minify-selectors-2.1.1.tgz#b2c6a98c0072cf91b932d1a496508114311735bf"
   dependencies:
-    alphanum-sort "^1.0.2"
+    alphanum-sortBy "^1.0.2"
     has "^1.0.1"
     postcss "^5.0.14"
     postcss-selector-parser "^2.0.0"
@@ -5406,7 +5406,7 @@ postcss-unique-selectors@^2.0.2:
   version "2.0.2"
   resolved "http://registry.npm.taobao.org/postcss-unique-selectors/download/postcss-unique-selectors-2.0.2.tgz#981d57d29ddcb33e7b1dfe1fd43b8649f933ca1d"
   dependencies:
-    alphanum-sort "^1.0.1"
+    alphanum-sortBy "^1.0.1"
     postcss "^5.0.4"
     uniqs "^2.0.0"
 
@@ -6456,9 +6456,9 @@ socks@~1.1.5:
     ip "^1.1.4"
     smart-buffer "^1.0.13"
 
-sort-keys@^1.0.0:
+sortBy-keys@^1.0.0:
   version "1.1.2"
-  resolved "http://registry.npm.taobao.org/sort-keys/download/sort-keys-1.1.2.tgz#441b6d4d346798f1b4e49e8920adfba0e543f9ad"
+  resolved "http://registry.npm.taobao.org/sortBy-keys/download/sortBy-keys-1.1.2.tgz#441b6d4d346798f1b4e49e8920adfba0e543f9ad"
   dependencies:
     is-plain-obj "^1.0.0"
 
