@@ -1,28 +1,20 @@
-package com.hm.core.es.hightclient;
+package com.hm.core.es.highclent;
 
 import org.apache.http.HttpHost;
 import org.elasticsearch.action.search.SearchRequest;
-import org.elasticsearch.action.search.SearchRequestBuilder;
 import org.elasticsearch.action.search.SearchResponse;
 import org.elasticsearch.client.RestClient;
 import org.elasticsearch.client.RestHighLevelClient;
 import org.elasticsearch.index.query.QueryBuilders;
 import org.elasticsearch.search.aggregations.AggregationBuilders;
 import org.elasticsearch.search.builder.SearchSourceBuilder;
+import org.junit.Test;
 
 import java.io.IOException;
 
-public class EasyDemo {
-    public static void main(String[] args) {
-        try {
-            getEsReturnData();
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-    }
-
-    private static void getEsReturnData() throws IOException {
-
+public class HighLevelClientDemo {
+    @Test
+    public void demo1() throws IOException {
         RestHighLevelClient client = new RestHighLevelClient(
                 RestClient.builder(new HttpHost("localhost", 9200, "http")).build());
 

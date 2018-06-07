@@ -1,4 +1,4 @@
-package com.hm.core.es.hightclient;
+package com.hm.core.es.highclient;
 
 import org.apache.http.HttpHost;
 import org.elasticsearch.client.RestClient;
