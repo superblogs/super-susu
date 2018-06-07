@@ -34,7 +34,7 @@
 
 
         <createTable tableName="word_map">
-            <column name="word-id" type="bigint(20)" autoIncrement="true">
+            <column name="word_id" type="bigint(20)" autoIncrement="true">
                 <constraints primaryKey="true"/>
             </column>
             <column name="word" type="varchar(255)">
@@ -55,6 +55,19 @@
                 <constraints nullable="true"/>
             </column>
         </createTable>
+
+        <insert tableName="word_map">
+            <column name="word_id">1</column>
+            <column name="word">小米</column>
+            <column name="mapper">小米科技有限责任公司</column>
+            <column name="create_by">业务人员1</column>
+        </insert><insert tableName="word_map">
+            <column name="word_id">2</column>
+            <column name="word">京东</column>
+            <column name="mapper">北京京东世纪贸易有限公司</column>
+            <column name="create_by">业务人员1</column>
+        </insert>
+
     </changeSet>
 
 </databaseChangeLog>

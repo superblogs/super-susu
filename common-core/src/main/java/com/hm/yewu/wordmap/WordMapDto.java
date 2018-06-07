@@ -6,7 +6,7 @@ import javax.persistence.*;
 @Table(name="word_map")
 public class WordMapDto {
     @Id
-    @Column(name = "word-id")
+    @Column(name = "word_id")
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long wordId;
 
