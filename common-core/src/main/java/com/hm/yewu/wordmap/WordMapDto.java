@@ -3,7 +3,7 @@ package com.hm.yewu.wordmap;
 import javax.persistence.*;
 
 @Entity
-@Table(name="word-map")
+@Table(name="word_map")
 public class WordMapDto {
     @Id
     @Column(name = "word-id")
@@ -22,6 +22,9 @@ public class WordMapDto {
     @Column(name = "create_time")
     private String createTime;
 
+    @Column(name = "update_time")
+    private String updateTime;
+
     @Override
     public String toString() {
         return "WordMapDto{" +
@@ -30,6 +33,7 @@ public class WordMapDto {
                 ", mapper='" + mapper + '\'' +
                 ", createBy='" + createBy + '\'' +
                 ", createTime='" + createTime + '\'' +
+                ", updateTime='" + updateTime + '\'' +
                 '}';
     }
 
@@ -71,5 +75,13 @@ public class WordMapDto {
 
     public void setCreateTime(String createTime) {
         this.createTime = createTime;
+    }
+
+    public String getUpdateTime() {
+        return updateTime;
+    }
+
+    public void setUpdateTime(String updateTime) {
+        this.updateTime = updateTime;
     }
 }

@@ -1,4 +1,6 @@
 package com.hm.yewu.wordmap;
 
-public class WordMapRepository {
+import org.springframework.data.jpa.repository.JpaRepository;
+
+public interface WordMapRepository extends JpaRepository<WordMapDto, Long> {
 }
