@@ -105,6 +105,12 @@
             <artifactId>transport</artifactId>
             <version>5.6.1</version>
         </dependency>
+        <!-- fast Json-->
+        <dependency>
+            <groupId>com.alibaba</groupId>
+            <artifactId>fastjson</artifactId>
+            <version>1.2.44</version>
+        </dependency>
 
 
         <dependency>

@@ -1,9 +1,14 @@
 package com.hm.yewu.esdata;
 
-public interface FilterQuery {
+public class FilterQuery {
 
-    public boolean isChineseNameByEs(String str);
+    public static boolean isChineseNameByEs(String str) {
 
-    public boolean isChineseNameByHanlp(String str);
+        return true;
+    }
+
+    public static boolean isChineseNameByHanlp(String str) {
+        return true;
+    }
 
 }

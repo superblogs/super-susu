@@ -6,23 +6,26 @@ import org.elasticsearch.action.search.SearchResponse;
 import org.elasticsearch.client.RestClient;
 import org.elasticsearch.client.RestHighLevelClient;
 import org.elasticsearch.index.query.QueryBuilders;
+import org.elasticsearch.search.SearchHit;
 import org.elasticsearch.search.aggregations.AggregationBuilders;
 import org.elasticsearch.search.builder.SearchSourceBuilder;
 import org.junit.Test;
 
 import java.io.IOException;
+import java.util.Arrays;
 
 public class HighLevelClientDemo {
+
+
     @Test
     public void demo1() throws IOException {
         RestHighLevelClient client = new RestHighLevelClient(
                 RestClient.builder(new HttpHost("localhost", 9200, "http")).build());
-
         SearchSourceBuilder searchSourceBuilder = new SearchSourceBuilder();
         searchSourceBuilder.query(QueryBuilders.matchAllQuery());
-        searchSourceBuilder.aggregation(AggregationBuilders.terms("top_10_states").field("state").size(10));
+        searchSourceBuilder.aggregation(AggregationBuilders.terms("小米科技").field("Name").size(100));
         SearchRequest searchRequest = new SearchRequest();
-        searchRequest.indices("social-*");
+//        searchRequest.indices("social-*");
         searchRequest.source(searchSourceBuilder);
         //@Todo 查询SearchRequestBuilder && SearchSourceBuilder 的关系
         //SearchRequestBuilder
@@ -30,5 +33,27 @@ public class HighLevelClientDemo {
         SearchResponse searchResponse = client.search(searchRequest);
 
         System.out.println(searchResponse.getHits());
+    }
+
+    @Test
+    public void demo2() throws IOException {
+        RestHighLevelClient client = new RestHighLevelClient(
+                RestClient.builder(new HttpHost("localhost", 9200, "http")).build());
+        SearchSourceBuilder searchSourceBuilder = new SearchSourceBuilder();
+
+        searchSourceBuilder.query(QueryBuilders.termQuery("Name", "米科技"));
+        searchSourceBuilder.from(1);
+        searchSourceBuilder.size(10);
+        searchSourceBuilder.fetchSource("Name", "");
+
+        SearchRequest searchRequest = new SearchRequest().source(searchSourceBuilder);
+        SearchResponse searchResponse = client.search(searchRequest);
+
+
+        SearchHit[] searchHits = searchResponse.getHits().getHits();
+
+        Arrays.stream(searchHits).forEach(i -> System.out.println(i.getSource().get("Name")));
+
+        System.out.println(searchResponse);
     }
 }
