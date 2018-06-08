@@ -1,7 +1,5 @@
 package com.hm.yewu.esdata;
 
-import org.springframework.context.annotation.Bean;
-
 public class QueryDto {
     private String q;
     private int page;

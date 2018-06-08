@@ -1,6 +1,6 @@
 package com.hm.yewu.esdata;
 
-public interface FilterQueryString {
+public interface FilterQuery {
 
     public boolean isChineseNameByEs(String str);
 
