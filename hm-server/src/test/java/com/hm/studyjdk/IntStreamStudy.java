@@ -26,4 +26,15 @@ public class IntStreamStudy {
         stream.forEach(t -> System.out.println("符合勾股定理的三角形有：" + t[0] + " " + t[1] + " " + t[2]));
 
     }
+
+
+    @Test
+    public void GouGuSuper_BecauseOnceMathSqrt() {
+        IntStream.rangeClosed(1, 100).boxed()
+                .flatMap(a -> IntStream.rangeClosed(a, 100)
+                        .mapToObj(b -> new double[]{a, b, Math.sqrt(a * a + b * b)})
+                        .filter(t -> t[2] % 1 == 0)
+                ).forEach(t -> System.out.println("符合勾股定理的三角形有：" + t[0] + " " + t[1] + " " + t[2]));
+    }
+
 }
