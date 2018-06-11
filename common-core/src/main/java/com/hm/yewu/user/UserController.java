@@ -21,6 +21,6 @@ public class UserController {
     @ResponseBody
     public List<UserDto> getUserList() {
         List<UserDto> list = userRepository.findAll();
-        return  list;
+        return list;
     }
 }

@@ -12,12 +12,11 @@ import java.util.List;
 public class EsCompanyController {
 
 
-
     private Logger logger = LoggerFactory.getLogger(EsCompanyController.class);
 
     @PostMapping
     public List queryByCompanyName(@RequestBody QueryDto queryDto) {
-        logger.info("query :"+queryDto.toString());
+        logger.info("query :" + queryDto.toString());
 
         return null;
     }
@@ -26,13 +25,13 @@ public class EsCompanyController {
      * give a q
      * return a Class Q
      */
-    public Q analysisString(String str){
+    public Q analysisString(String str) {
 
 
         return new Q();
     }
 
-    public Boolean isChinaName(String str){
+    public Boolean isChinaName(String str) {
 
         return true;
     }
