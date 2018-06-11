@@ -4,6 +4,7 @@ import org.junit.Assert;
 import org.junit.Test;
 
 import java.util.*;
+import java.util.stream.IntStream;
 
 import static java.util.stream.Collectors.joining;
 import static java.util.stream.Collectors.toList;
@@ -109,8 +110,10 @@ public class StreamStudy {
                 .max();
         int i = max.orElse(1);
         System.out.println(i);
-        Assert.assertEquals(10000,i);
+        Assert.assertEquals(10000, i);
     }
+
+
 
     @Test
     public void testTheStreamSec() {
