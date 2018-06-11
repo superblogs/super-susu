@@ -6,6 +6,7 @@ import org.junit.Test;
 import java.util.Arrays;
 import java.util.Comparator;
 import java.util.List;
+import java.util.Optional;
 
 import static java.util.stream.Collectors.joining;
 import static java.util.stream.Collectors.toList;
@@ -60,8 +61,8 @@ public class StreamStudy {
                 .sorted(Comparator.comparing(String::toString))
                 .collect(joining());
         System.out.println(collect);
-        String collect1="huwenjianjiaozhijunliujingmalongsunzhongshi---";
-        Assert.assertEquals(collect,collect1);
+        String collect1 = "huwenjianjiaozhijunliujingmalongsunzhongshi---";
+        Assert.assertEquals(collect, collect1);
     }
 
     @Test
@@ -73,12 +74,35 @@ public class StreamStudy {
     @Test
     public void addTheTransactionValueWhereTraderInTYUT() {
         int sum = transactionList.parallelStream().filter(i -> i.getTrade().getCity().equals("太原理工大学"))
-                .map(Transaction::getValue)
-                .reduce(0, (a, b) -> a + b);
+                .mapToInt(Transaction::getValue)
+                .sum();
 
         System.out.println(sum);
     }
 
+    /**
+     * MapToInt 省去int计算的装箱操作
+     */
+    @Test
+    public void sumAndTestMapToInt() {
+        int sum = transactionList.parallelStream()
+                .filter(transaction -> transaction.getTrade().getCity().equals("太原理工大学"))
+                .mapToInt(Transaction::getValue)
+                .sum();
+        System.out.println(sum);
+        Assert.assertEquals(14200, 14200);
+    }
+
+
+    @Test
+    public void maxValue() {
+        Optional<Integer> maxValue = transactionList.parallelStream().map(Transaction::getValue)
+                .reduce(Integer::max);
+        System.out.println("Max" + maxValue);
+        Optional<Integer> min = transactionList.parallelStream().map(Transaction::getValue)
+                .reduce(Integer::min);
+        System.out.printf("Min: %d%n", min.get());
+    }
 
     @Test
     public void testTheStreamSec() {
