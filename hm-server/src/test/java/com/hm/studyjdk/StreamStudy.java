@@ -3,10 +3,7 @@ package com.hm.studyjdk;
 import org.junit.Assert;
 import org.junit.Test;
 
-import java.util.Arrays;
-import java.util.Comparator;
-import java.util.List;
-import java.util.Optional;
+import java.util.*;
 
 import static java.util.stream.Collectors.joining;
 import static java.util.stream.Collectors.toList;
@@ -61,7 +58,7 @@ public class StreamStudy {
                 .sorted(Comparator.comparing(String::toString))
                 .collect(joining());
         System.out.println(collect);
-        String collect1 = "huwenjianjiaozhijunliujingmalongsunzhongshi---";
+        String collect1 = "huwenjianjiaozhijunliujingmalongsunzhongshi";
         Assert.assertEquals(collect, collect1);
     }
 
@@ -102,6 +99,17 @@ public class StreamStudy {
         Optional<Integer> min = transactionList.parallelStream().map(Transaction::getValue)
                 .reduce(Integer::min);
         System.out.printf("Min: %d%n", min.get());
+    }
+
+
+    @Test
+    public void testBoxed() {
+        OptionalInt max = transactionList.parallelStream()
+                .mapToInt(Transaction::getValue)
+                .max();
+        int i = max.orElse(1);
+        System.out.println(i);
+        Assert.assertEquals(10000,i);
     }
 
     @Test
