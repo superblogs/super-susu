@@ -2,13 +2,16 @@ package com.hm.core.es.highclent;
 
 import org.apache.http.HttpHost;
 import org.elasticsearch.action.search.SearchRequest;
+import org.elasticsearch.action.search.SearchRequestBuilder;
 import org.elasticsearch.action.search.SearchResponse;
 import org.elasticsearch.client.RestClient;
 import org.elasticsearch.client.RestHighLevelClient;
+import org.elasticsearch.index.query.QueryBuilder;
 import org.elasticsearch.index.query.QueryBuilders;
 import org.elasticsearch.search.SearchHit;
 import org.elasticsearch.search.aggregations.AggregationBuilders;
 import org.elasticsearch.search.builder.SearchSourceBuilder;
+import org.elasticsearch.search.fetch.subphase.highlight.HighlightBuilder;
 import org.junit.Test;
 
 import java.io.IOException;
@@ -41,10 +44,36 @@ public class HighLevelClientDemo {
                 RestClient.builder(new HttpHost("localhost", 9200, "http")).build());
         SearchSourceBuilder searchSourceBuilder = new SearchSourceBuilder();
 
-        searchSourceBuilder.query(QueryBuilders.termQuery("Name", "米科技"));
+        searchSourceBuilder.query(QueryBuilders.termQuery("Name", "北京京东"));
         searchSourceBuilder.from(1);
-        searchSourceBuilder.size(10);
+        searchSourceBuilder.size(100);
         searchSourceBuilder.fetchSource("Name", "");
+
+        SearchRequest searchRequest = new SearchRequest().source(searchSourceBuilder);
+        SearchResponse searchResponse = client.search(searchRequest);
+
+
+        SearchHit[] searchHits = searchResponse.getHits().getHits();
+
+        Arrays.stream(searchHits).forEach(i -> System.out.println(i.getSource().get("Name")));
+
+        System.out.println(searchResponse);
+    }
+
+    @Test
+    public void demo3() throws Exception{
+        RestHighLevelClient client = new RestHighLevelClient(
+                RestClient.builder(new HttpHost("localhost", 9200, "http")).build());
+        SearchSourceBuilder searchSourceBuilder = new SearchSourceBuilder();
+
+        searchSourceBuilder.query(QueryBuilders.termQuery("OperName", "范文化"));
+        searchSourceBuilder.from(1);
+        searchSourceBuilder.size(100);
+
+        SearchRequestBuilder searchRequestBuilder ;
+
+        System.out.println(searchSourceBuilder);
+//        searchSourceBuilder.fetchSource("Name", "");
 
         SearchRequest searchRequest = new SearchRequest().source(searchSourceBuilder);
         SearchResponse searchResponse = client.search(searchRequest);
