@@ -23,6 +23,8 @@ import java.util.Map;
 
 /**
  * http://www.hankcs.com/nlp/hanlp.html
+ *
+ * http://hanlp.dksou.com/HanLP.html
  */
 public class Test {
 
