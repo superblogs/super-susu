@@ -17,13 +17,14 @@ import com.hankcs.hanlp.tokenizer.IndexTokenizer;
 import com.hankcs.hanlp.tokenizer.NLPTokenizer;
 import com.hankcs.hanlp.tokenizer.SpeedTokenizer;
 
+import java.io.IOException;
 import java.util.Arrays;
 import java.util.List;
 import java.util.Map;
 
 /**
  * http://www.hankcs.com/nlp/hanlp.html
- *
+ * <p>
  * http://hanlp.dksou.com/HanLP.html
  */
 public class Test {
@@ -507,5 +508,32 @@ public class Test {
         }
     }
 
+    /**
+     * Query改写
+     * https://github.com/hankcs/hanlp-lucene-plugin
+     */
+    @org.junit.Test
+    public void queryChange() throws IOException {
+//        String text = "中华人民共和国很辽阔";
+//        for (int i = 0; i < text.length(); ++i)
+//        {
+//            System.out.print(text.charAt(i) + "" + i + " ");
+//        }
+//        System.out.println();
+//        Analyzer analyzer = new HanLPAnalyzer();
+//        TokenStream tokenStream = analyzer.tokenStream("field", text);
+//            tokenStream.reset();
+//        while (tokenStream.incrementToken())
+//        {
+//            CharTermAttribute attribute = tokenStream.getAttribute(CharTermAttribute.class);
+//            // 偏移量
+//            OffsetAttribute offsetAtt = tokenStream.getAttribute(OffsetAttribute.class);
+//            // 距离
+//            PositionIncrementAttribute positionAttr = tokenStream.getAttribute(PositionIncrementAttribute.class);
+//            // 词性
+//            TypeAttribute typeAttr = tokenStream.getAttribute(TypeAttribute.class);
+//            System.out.printf("[%d:%d %d] %s/%s\n", offsetAtt.startOffset(), offsetAtt.endOffset(), positionAttr.getPositionIncrement(), attribute, typeAttr.type());
+//        }
+    }
 
 }
