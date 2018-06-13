@@ -4,6 +4,7 @@ import org.apache.http.HttpHost;
 import org.elasticsearch.client.RestClient;
 import org.elasticsearch.client.RestClientBuilder;
 import org.elasticsearch.client.RestHighLevelClient;
+import org.springframework.context.annotation.Bean;
 
 import javax.annotation.PostConstruct;
 import java.io.IOException;
@@ -48,7 +49,7 @@ public class ESClientSpringFactory {
     public void init() {
         builder = RestClient.builder(HTTP_HOST);
         setConnectTimeOutConfig();
-        setMutiConnectConfig();
+        setMuTiConnectConfig();
         restClient = builder.build();
         restHighLevelClient = new RestHighLevelClient(restClient);
         System.out.println("elasticsearch init factory");
@@ -65,7 +66,7 @@ public class ESClientSpringFactory {
     }
 
     // 使用异步httpclient时设置并发连接数
-    public void setMutiConnectConfig() {
+    public void setMuTiConnectConfig() {
         builder.setHttpClientConfigCallback(httpClientBuilder -> {
             httpClientBuilder.setMaxConnTotal(MAX_CONN_TOTAL);
             httpClientBuilder.setMaxConnPerRoute(MAX_CONN_PER_ROUTE);

@@ -1,6 +1,6 @@
 package com.hm.yewu.esdata;
 
-import com.hm.yewu.esdata.dto.QueryDto;
+import com.hm.yewu.esdata.model.QueryDto;
 import org.junit.Test;
 
 public class QueryDtoTest {

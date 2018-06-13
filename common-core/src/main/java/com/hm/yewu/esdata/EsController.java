@@ -1,7 +1,7 @@
 package com.hm.yewu.esdata;
 
-import com.hm.yewu.esdata.dto.Q;
-import com.hm.yewu.esdata.dto.QueryDto;
+import com.hm.yewu.esdata.model.Q;
+import com.hm.yewu.esdata.model.QueryDto;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.web.bind.annotation.PostMapping;

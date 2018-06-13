@@ -1,4 +1,4 @@
-package com.hm.yewu.esdata.dto;
+package com.hm.yewu.esdata.model;
 
 public class QueryDto {
     private String q;
