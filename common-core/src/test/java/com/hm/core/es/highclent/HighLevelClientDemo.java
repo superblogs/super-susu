@@ -92,6 +92,7 @@ public class HighLevelClientDemo {
         sourceBuilder.size(10);
         sourceBuilder.fetchSource(new String[]{"title"}, new String[]{});
         MatchQueryBuilder matchQueryBuilder = QueryBuilders.matchQuery("title", "费德勒");
+        matchQueryBuilder.analyzer("ik_smart");
         TermQueryBuilder termQueryBuilder = QueryBuilders.termQuery("tag", "体育");
         RangeQueryBuilder rangeQueryBuilder = QueryBuilders.rangeQuery("publishTime");
         rangeQueryBuilder.gte("2018-01-26T08:00:00Z");
