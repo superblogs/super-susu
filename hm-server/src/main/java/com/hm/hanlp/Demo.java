@@ -12,8 +12,8 @@ public class Demo {
 
 
     public static void main(String[] args) {
-        String word = "新疆天山小米农业科技有限公司";
-        getCoreName(word);
+        String word = "阮洪初";
+        segment(word);
     }
 
     public static String getCoreName(String name) {
@@ -32,7 +32,7 @@ public class Demo {
     }
 
 
-    public static List<TermInput> segment(String word) {
+    private static List<TermInput> segment(String word) {
         Segment segment = getSegment();
         List<TermInput> result = segment.seg(word).stream().map(eachWorld -> new TermInput(eachWorld.word, eachWorld.nature.toString(), eachWorld.offset)).collect(Collectors.toList());
         result.forEach(i -> {
