@@ -12,7 +12,7 @@ public class Demo {
 
 
     public static void main(String[] args) {
-        String word = "阮洪初";
+        String word = "肖植金";
         segment(word);
     }
 
