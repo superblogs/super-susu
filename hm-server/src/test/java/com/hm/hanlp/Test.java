@@ -60,6 +60,7 @@ public class Test {
     public void nlpDemo() {
         List<Term> termList = NLPTokenizer.segment("中国科学院计算技术研究所的宗成庆教授正在教授自然语言处理课程");
         System.out.println(termList);
+        termList.forEach(i -> System.out.println(i.nature.toString()));
     }
 
     /**

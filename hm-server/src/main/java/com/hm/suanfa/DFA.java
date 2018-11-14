@@ -14,16 +14,16 @@ public class DFA {
 
     public static void main(String[] args) {
         Set<String> sets = new HashSet<>();
-        sets.add("傻逼");
-        sets.add("日本鬼子");
-        sets.add("日本鬼");
-        sets.add("子女");
+        sets.add("你好");
+        sets.add("你好吗");
+
 
         System.out.println(createWordTree(sets));
+
     }
 
-    static HashMap createWordTree(Set<String> words) {
-        HashMap wordTree = new HashMap(words.size());
+    static Map createWordTree(Set<String> words) {
+        Map<String, String> wordTree = new HashMap(words.size());
 
         words.forEach(word -> {
             Map nowMap = wordTree;
@@ -43,7 +43,7 @@ public class DFA {
                 else {
 
                     // 设置标志位
-                    Map<String, String> newMap = new HashMap<String, String>();
+                    Map<String, String> newMap = new HashMap<>();
                     newMap.put("isEnd", "0");
 
                     // 添加到集合

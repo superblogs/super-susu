@@ -54,36 +54,36 @@ public class SensitiveWordInit {
 
         for (String word : wordSet) {
             Map nowMap = wordMap;
-            for (int i = 0; i < word.length(); i++) {
-
-                // 转换成char型
-                char keyChar = word.charAt(i);
-
-                // 获取
-                Object tempMap = nowMap.get(keyChar);
-
-                // 如果存在该key，直接赋值
-                if (tempMap != null) {
-                    nowMap = (Map) tempMap;
-                }
-
-                // 不存在则，则构建一个map，同时将isEnd设置为0，因为他不是最后一个
-                else {
-
-                    // 设置标志位
-                    Map<String, String> newMap = new HashMap<String, String>();
-                    newMap.put("isEnd", "0");
-
-                    // 添加到集合
-                    nowMap.put(keyChar, newMap);
-                    nowMap = newMap;
-                }
-
-                // 最后一个
-                if (i == word.length() - 1) {
-                    nowMap.put("isEnd", "1");
-                }
-            }
+//            for (int i = 0; i < word.length(); i++) {
+//
+//                // 转换成char型
+//                char keyChar = word.charAt(i);
+//
+//                // 获取
+//                Object tempMap = nowMap.get(keyChar);
+//
+//                // 如果存在该key，直接赋值
+//                if (tempMap != null) {
+//                    nowMap = (Map) tempMap;
+//                }
+//
+//                // 不存在则，则构建一个map，同时将isEnd设置为0，因为他不是最后一个
+//                else {
+//
+//                    // 设置标志位
+//                    Map<String, String> newMap = new HashMap<String, String>();
+//                    newMap.put("isEnd", "0");
+//
+//                    // 添加到集合
+//                    nowMap.put(keyChar, newMap);
+//                    nowMap = newMap;
+//                }
+//
+//                // 最后一个
+//                if (i == word.length() - 1) {
+//                    nowMap.put("isEnd", "1");
+//                }
+//            }
         }
 
         return wordMap;
