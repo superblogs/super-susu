@@ -4,6 +4,7 @@ import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Set;
 
+@SuppressWarnings("all")
 public class Test {
 
     public static void main(String... args) {
@@ -15,6 +16,17 @@ public class Test {
         hashMap.put("4", "four");
         hashMap.put("5", "five");
 
+        HashMap hashMapp = hashMap;
+        hashMapp.put("6", "six");
+
+        HashMap hashMap3 = hashMapp;
+
+        hashMap3 = new HashMap();
+        hashMap3.put("new", "newewew");
+
+        System.out.println(hashMap);
+        System.out.println(hashMapp);
+        System.out.println(hashMap3);
         System.out.println(hashMap.get("1"));
 
         Set set = new HashSet();
