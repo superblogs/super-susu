@@ -1,6 +1,6 @@
 
 
-package com.hm.suanfa;
+package com.hm.suanfa.DFA;
 
 import java.io.BufferedReader;
 import java.io.File;
@@ -25,6 +25,9 @@ public class SensitiveWordInit {
     // 字符编码
     private String ENCODING = "UTF-8";
 
+    {
+        System.out.println("读取敏感词库");
+    }
     /**
      * 初始化敏感字库
      *
@@ -42,9 +45,9 @@ public class SensitiveWordInit {
     /**
      * 读取敏感词库，将敏感词放入HashSet中，构建一个DFA算法模型：<br>
      * 中 = { isEnd = 0 国 = { isEnd = 1 人 = {isEnd = 0 民 = {isEnd = 1} } 男 = { isEnd = 0 人 = { isEnd =1 } } } }
-
-
-
+     * <p>
+     * <p>
+     * <p>
      * 五 = { isEnd = 0 星 = { isEnd = 0 红 = { isEnd = 0 旗 = { isEnd = 1 } } } }
      */
     private Map addSensitiveWordToHashMap(Set<String> wordSet) {
@@ -54,36 +57,36 @@ public class SensitiveWordInit {
 
         for (String word : wordSet) {
             Map nowMap = wordMap;
-//            for (int i = 0; i < word.length(); i++) {
-//
-//                // 转换成char型
-//                char keyChar = word.charAt(i);
-//
-//                // 获取
-//                Object tempMap = nowMap.get(keyChar);
-//
-//                // 如果存在该key，直接赋值
-//                if (tempMap != null) {
-//                    nowMap = (Map) tempMap;
-//                }
-//
-//                // 不存在则，则构建一个map，同时将isEnd设置为0，因为他不是最后一个
-//                else {
-//
-//                    // 设置标志位
-//                    Map<String, String> newMap = new HashMap<String, String>();
-//                    newMap.put("isEnd", "0");
-//
-//                    // 添加到集合
-//                    nowMap.put(keyChar, newMap);
-//                    nowMap = newMap;
-//                }
-//
-//                // 最后一个
-//                if (i == word.length() - 1) {
-//                    nowMap.put("isEnd", "1");
-//                }
-//            }
+            for (int i = 0; i < word.length(); i++) {
+
+                // 转换成char型
+                char keyChar = word.charAt(i);
+
+                // 获取
+                Object tempMap = nowMap.get(keyChar);
+
+                // 如果存在该key，直接赋值
+                if (tempMap != null) {
+                    nowMap = (Map) tempMap;
+                }
+
+                // 不存在则，则构建一个map，同时将isEnd设置为0，因为他不是最后一个
+                else {
+
+                    // 设置标志位
+                    Map<String, String> newMap = new HashMap<>();
+                    newMap.put("isEnd", "0");
+
+                    // 添加到集合
+                    nowMap.put(keyChar, newMap);
+                    nowMap = newMap;
+                }
+
+                // 最后一个
+                if (i == word.length() - 1) {
+                    nowMap.put("isEnd", "1");
+                }
+            }
         }
 
         return wordMap;
@@ -100,8 +103,7 @@ public class SensitiveWordInit {
         Set<String> wordSet = null;
 
         // 读取文件
-        String app = System.getProperty("user.dir");
-        File file = new File(app + "/src/sensitive.txt");
+        File file = new File("D:\\work\\project\\personal\\super-susu\\hm-server\\src\\main\\resources\\test.txt");
         try {
 
             InputStreamReader read = new InputStreamReader(new FileInputStream(file), ENCODING);
@@ -121,7 +123,7 @@ public class SensitiveWordInit {
                 bufferedReader.close();
 
                 String str = sb.toString();
-                String[] ss = str.split("，");
+                String[] ss = str.split(",");
                 for (String s : ss) {
                     wordSet.add(s);
                 }

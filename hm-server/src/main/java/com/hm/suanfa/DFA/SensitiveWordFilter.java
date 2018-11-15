@@ -1,4 +1,4 @@
-package com.hm.suanfa;
+package com.hm.suanfa.DFA;
 
 import java.text.SimpleDateFormat;
 import java.util.*;
@@ -9,9 +9,9 @@ import java.util.*;
  * @author dxm
  */
 @SuppressWarnings("rawtypes")
-public class SensitivewordFilter {
+public class SensitiveWordFilter {
 
-    private Map sensitiveWordMap = null;
+    private Map sensitiveWordMap;
 
     // 最小匹配规则
     public static int minMatchTYpe = 1;
@@ -20,12 +20,12 @@ public class SensitivewordFilter {
     public static int maxMatchType = 2;
 
     // 单例
-    private static SensitivewordFilter inst = null;
+    private static SensitiveWordFilter inst = null;
 
     /**
      * 构造函数，初始化敏感词库
      */
-    private SensitivewordFilter() {
+    private SensitiveWordFilter() {
         sensitiveWordMap = new SensitiveWordInit().initKeyWord();
     }
 
@@ -34,19 +34,15 @@ public class SensitivewordFilter {
      *
      * @return
      */
-    public static SensitivewordFilter getInstance() {
+    public static SensitiveWordFilter getInstance() {
         if (null == inst) {
-            inst = new SensitivewordFilter();
+            inst = new SensitiveWordFilter();
         }
         return inst;
     }
 
     /**
      * 判断文字是否包含敏感字符
-     *
-     * @param txt
-     * @param matchType
-     * @return
      */
     public boolean isContaintSensitiveWord(String txt, int matchType) {
         boolean flag = false;
@@ -65,13 +61,9 @@ public class SensitivewordFilter {
 
     /**
      * 获取文字中的敏感词
-     *
-     * @param txt
-     * @param matchType
-     * @return
      */
     public Set<String> getSensitiveWord(String txt, int matchType) {
-        Set<String> sensitiveWordList = new HashSet<String>();
+        Set<String> sensitiveWordList = new HashSet<>();
 
         for (int i = 0; i < txt.length(); i++) {
 
@@ -92,11 +84,6 @@ public class SensitivewordFilter {
 
     /**
      * 替换敏感字字符
-     *
-     * @param txt
-     * @param matchType
-     * @param replaceChar
-     * @return
      */
     public String replaceSensitiveWord(String txt, int matchType, String replaceChar) {
 
@@ -105,8 +92,8 @@ public class SensitivewordFilter {
         // 获取所有的敏感词
         Set<String> set = getSensitiveWord(txt, matchType);
         Iterator<String> iterator = set.iterator();
-        String word = null;
-        String replaceString = null;
+        String word;
+        String replaceString;
         while (iterator.hasNext()) {
             word = iterator.next();
             replaceString = getReplaceChars(replaceChar, word.length());
@@ -118,10 +105,6 @@ public class SensitivewordFilter {
 
     /**
      * 获取替换字符串
-     *
-     * @param replaceChar
-     * @param length
-     * @return
      */
     private String getReplaceChars(String replaceChar, int length) {
         String resultReplace = replaceChar;
@@ -135,11 +118,6 @@ public class SensitivewordFilter {
     /**
      * 检查文字中是否包含敏感字符，检查规则如下：<br>
      * 如果存在，则返回敏感词字符的长度，不存在返回0
-     *
-     * @param txt
-     * @param beginIndex
-     * @param matchType
-     * @return
      */
     public int CheckSensitiveWord(String txt, int beginIndex, int matchType) {
 
@@ -168,7 +146,7 @@ public class SensitivewordFilter {
                     flag = true;
 
                     // 最小规则，直接返回,最大规则还需继续查找
-                    if (SensitivewordFilter.minMatchTYpe == matchType) {
+                    if (SensitiveWordFilter.minMatchTYpe == matchType) {
                         break;
                     }
                 }
@@ -191,13 +169,16 @@ public class SensitivewordFilter {
 
         SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss:SSS");
 
-        SensitivewordFilter filter = SensitivewordFilter.getInstance();
-        String txt = "太多的伤感情怀也许只局限于饲养基地 荧幕中的情节，主人公尝试着去用某种方式渐渐的很潇洒地释自杀指南怀那些自己经历的伤感。" + "然后法轮功 我们的扮演的角色就是跟随着主人公的喜红客联盟 怒哀乐而过于牵强的把自己的情感也附加于银幕情节中，然后感动就流泪，" + "难过就躺在某一个人的怀里尽情的阐述心扉或者手机卡复制器一个人一杯红酒一部电影在夜三级片 深人静的晚上，关上电话静静的发呆着。";
-        txt = "法轮大法";
+        SensitiveWordFilter filter = SensitiveWordFilter.getInstance();
+        String txt = "太多的伤感情怀也许只局限于饲养基地 荧幕中的情节，主人公尝试着去用某种方式渐渐的很潇洒地释自杀指南怀那些自己经历的伤感。"
+                + "然后法轮功 我们的扮演的角色就是跟随着主人公的喜红客联盟 怒哀乐而过于牵强的把自己的情感也附加于银幕情节中，然后感动就流泪，"
+                + "难过就躺在某一个人的怀里尽情的阐述心扉或者手机卡复制器一个人一杯红酒一部电影在夜三级片 深人静的晚上，关上电话静静的发呆着。";
         System.out.println(sdf.format(new Date()));
         String hou = filter.replaceSensitiveWord(txt, 1, "*");
         System.out.println(sdf.format(new Date()));
         System.out.println("替换前的文字为：" + txt);
         System.out.println("替换后的文字为：" + hou);
+
+        System.out.println(new SensitiveWordFilter().replaceSensitiveWord(txt, 1, "999"));
     }
 }
