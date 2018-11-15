@@ -47,7 +47,7 @@ public class SensitiveWordInit {
      * <p>
      * 五 = { isEnd = 0 星 = { isEnd = 0 红 = { isEnd = 0 旗 = { isEnd = 1 } } } }
      */
-    private Map addSensitiveWordToHashMap(Set<String> wordSet) {
+    public Map addSensitiveWordToHashMap(Set<String> wordSet) {
 
         // 初始化敏感词容器，减少扩容操作
         Map wordMap = new HashMap(wordSet.size());
