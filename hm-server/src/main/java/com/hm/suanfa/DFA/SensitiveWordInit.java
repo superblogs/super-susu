@@ -6,10 +6,7 @@ import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.InputStreamReader;
-import java.util.HashMap;
-import java.util.HashSet;
-import java.util.Map;
-import java.util.Set;
+import java.util.*;
 
 
 /**
@@ -95,8 +92,6 @@ public class SensitiveWordInit {
     /**
      * 读取敏感词库中的内容，将内容添加到set集合中
      *
-     * @return
-     * @throws Exception
      */
     private Set<String> readSensitiveWordFile() {
 
@@ -111,10 +106,9 @@ public class SensitiveWordInit {
             // 文件流是否存在
             if (file.isFile() && file.exists()) {
 
-                wordSet = new HashSet<String>();
                 StringBuffer sb = new StringBuffer();
                 BufferedReader bufferedReader = new BufferedReader(read);
-                String txt = null;
+                String txt;
 
                 // 读取文件，将文件内容放入到set中
                 while ((txt = bufferedReader.readLine()) != null) {
@@ -124,9 +118,7 @@ public class SensitiveWordInit {
 
                 String str = sb.toString();
                 String[] ss = str.split(",");
-                for (String s : ss) {
-                    wordSet.add(s);
-                }
+                wordSet = new HashSet<>(Arrays.asList(ss));
             }
 
             // 关闭文件流
